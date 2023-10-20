@@ -1,0 +1,89 @@
+
+.container{
+    width: 100%;
+    height: 100vh;
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-position: top;
+    background-size: cover;
+}
+
+.formContainer{
+    width: 350px;
+    padding: 30px;
+    background-color: rgba(200, 200, 200, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px #00000047;
+}
+
+.imgContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 200px;
+}
+.imgContainer img{
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    
+}
+
+.inputContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+
+.inputsContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.usernameContainer{
+    display: flex;
+    align-items: center;
+}
+
+.formContainer button{
+    margin-top: 10px;
+    padding: 10px 5px;
+    width: 60%;
+    background-color: rgb(233, 203, 7);
+    border: none;
+    border-radius: 5px;
+    color: rgb(14, 14, 14);
+    font-size: 15px;
+}
+.formContainer button:hover{
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: rgb(122, 99, 111);
+}
+
+.inputSuccess{
+    border: 1px solid rgb(29, 202, 29);
+    padding: 7px 5px;
+    border-radius: 8px;
+    margin-right: 40px;
+}
+
+.inputFail{
+    padding: 7px 5px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.178);
+    margin-right: 40px;
+}

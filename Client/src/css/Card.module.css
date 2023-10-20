@@ -1,0 +1,172 @@
+
+.nameCharacter{
+    text-decoration: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+.genderCharacter{
+    text-decoration: none;
+    width: 100%;
+    margin: 0;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.genderCharacter:hover{
+    cursor: pointer;
+}
+
+.fav{
+max-width: 315px;
+display: flex;
+flex-direction: column;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 1px 1px 3px #0000003a;
+background-color: white;
+}
+
+.fav:hover{
+    box-shadow: 0 1px 10px 2px #00000084;
+}
+
+.favSelected{
+    max-width: 315px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px #00000027;
+    background-color: brown;
+}
+
+.divTextContainer{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+}
+.divTextContainer:hover{
+    cursor: pointer;
+}
+
+.divText{
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    text-align: left;
+}
+#textRight{
+    text-align: right;
+}
+.divText h2{
+    font-size: 15px;
+    margin: 0;
+    padding: 0 0 5px 0;
+}
+.divText p{
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0 0 5px 0;
+}
+#invisible{
+    scale: 0;
+}
+
+.imgContainer{
+    overflow: hidden;
+}
+
+.img{
+    object-fit: cover;
+    width: 100%;
+    transition: .5s;
+}
+
+.img:hover{
+    scale: 1.05;
+    transition: .5s;
+}   
+
+.imgStatic{
+    object-fit: cover;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+/* CARD DETAIL VIEW */
+
+.datosDetail{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.datosDetail h2{
+    margin: 10px 0;
+}
+
+.datosDetail h4{
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.episodios{
+    width: 400px;
+    display: flex;
+    /* justify-content: flex-start; */
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.episodio::after{
+    content: ',';
+}
+
+#loadingDiv{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}
+
+#loading{
+    width: 50px;
+    height: 50px;
+    border: 7px solid transparent;
+    border-top-color: rgb(255, 0, 0);
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+#loadingBig{
+    width: 100%;
+    height: 357px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes loading{
+    from { transform: rotate(0turn) }
+    to { transform: rotate(1turn) }
+}

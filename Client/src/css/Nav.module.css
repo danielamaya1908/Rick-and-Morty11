@@ -1,0 +1,44 @@
+.navbarra{
+    width: 100%;
+    height: 70px;
+}
+
+.nav{
+    width: 100%;
+    height: 72px;
+    background-color: rgb(18, 18, 22);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.button{
+    cursor: pointer;
+    border: none;
+    padding: 15px 25px;
+    font-weight: 500;
+    background-color: #d60ad9;
+    color: rgb(0, 0, 0);
+}
+.nav button:hover{
+    background-color: rgb(122, 99, 111);
+    color: rgb(255, 255, 255);
+}
+
+.buttonOn{
+    cursor: pointer;
+    border: none;
+    padding: 15px 25px;
+    font-weight: 500;
+    background-color: rgb(233, 203, 7);
+    color: rgb(0, 0, 0);
+}
+
+#about{
+    border-radius: 20px;
+}
+
+#home{
+    border-radius: 20px;
+}

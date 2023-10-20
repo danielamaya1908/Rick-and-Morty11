@@ -1,0 +1,44 @@
+
+.search_box{
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.181);
+    margin-right: 150px;
+}
+
+.input{
+    height: 100%;
+    width: 30%;
+    border: none;
+    outline: none;
+    padding-left: 30px;
+    background-color: transparent;
+}
+.input::placeholder{
+    color: rgba(0, 0, 0, 0.519);
+    font-size: 18px;
+}
+
+.añadir{
+    width: 100px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(10, 10, 10);
+    border: none;
+    font-weight: 300;
+    border-radius: 20px;
+    background-color: rgb(233, 203, 7);
+    margin-left: 210px;
+    margin-top: -43px;
+}
+.agregar:hover{
+    cursor: pointer;
+    background-color: rgb(146, 16, 16);
+}
