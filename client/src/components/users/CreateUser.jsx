@@ -20,7 +20,6 @@ export default function CreateUser({ register }) {
   const [errors, setErrors] = useState({});
   const [serverError, setServerError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [checkingEmail, setCheckingEmail] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = async (event) => {
@@ -28,9 +27,7 @@ export default function CreateUser({ register }) {
     setUserData({ ...userData, [name]: value });
     ValidateRegister({ ...userData, [name]: value }, setErrors, errors, name);
     if (name === "email" && value) {
-      setCheckingEmail(true);
       const exists = await checkEmailExists(value);
-      setCheckingEmail(false);
       setErrors((prev) => ({
         ...prev,
         email: exists ? "Este email ya está registrado" : prev.email,

@@ -1,9 +1,17 @@
+// src/routes/favorites.js
 const express = require("express");
 const router = express.Router();
-const postFav = require("../controllers/fav/postFav"); // Asumiendo que creaste un index.js
-const deleteFav = require("../controllers/fav/deleteFav"); // Asumiendo que creaste un index.js
+const authenticateToken = require("../middlewares/authMiddleware");
+const toggleFavorite = require("../controllers/favorites/toggleFavorite");
+const getFavorites = require("../controllers/favorites/getFavorites");
 
-router.post("/fav", postFav);
-router.delete("/fav/:id", deleteFav);
+// Todas las rutas requieren autenticación
+router.use(authenticateToken);
+
+// Ruta para toggleFavorite (POST /favorites)
+router.post("/", toggleFavorite);
+
+// Ruta para getFavorites (GET /favorites)
+router.get("/getFavorites", getFavorites);
 
 module.exports = router;
