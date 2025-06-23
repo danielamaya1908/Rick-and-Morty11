@@ -9,84 +9,34 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        allowNull: false,
-        unique: true,
       },
-      name: {
-        type: DataTypes.STRING(100),
-        allowNull: false,
-        validate: {
-          notEmpty: {
-            msg: "El nombre no puede estar vacío",
-          },
-        },
-      },
-      status: {
-        type: DataTypes.STRING(50),
-        allowNull: false,
-        validate: {
-          notEmpty: {
-            msg: "El estado no puede estar vacío",
-          },
-        },
-      },
-      species: {
-        type: DataTypes.STRING(50),
-        allowNull: false,
-        validate: {
-          notEmpty: {
-            msg: "La especie no puede estar vacía",
-          },
-        },
-      },
-      gender: {
-        type: DataTypes.STRING(20),
-        allowNull: false,
-        validate: {
-          notEmpty: {
-            msg: "El género no puede estar vacío",
-          },
-        },
-      },
-      origin: {
-        type: DataTypes.STRING(100),
-        allowNull: false,
-        validate: {
-          notEmpty: {
-            msg: "El origen no puede estar vacío",
-          },
-        },
-      },
-      image: {
-        type: DataTypes.STRING(255),
-        allowNull: false,
-        validate: {
-          notEmpty: {
-            msg: "La imagen no puede estar vacía",
-          },
-          isUrl: {
-            msg: "Debe proporcionar una URL válida para la imagen",
-          },
-        },
-      },
-      characterId: {
+      character_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        unique: true,
-        validate: {
-          isInt: {
-            msg: "El ID del personaje debe ser un número entero",
-          },
-        },
       },
+      user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      is_favorite: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+      },
+      // created_at y updated_at se añaden automáticamente
     },
     {
-      tableName: "favorites", // Nombre explícito de la tabla en minúsculas
-      timestamps: false, // No usa createdAt ni updatedAt
-      underscored: true, // Convierte camelCase a snake_case
-      paranoid: false, // No habilita eliminación suave
+      tableName: "favorites",
+      underscored: true,
+      timestamps: true,
+      indexes: [
+        {
+          unique: true,
+          fields: ["character_id", "user_id"],
+          name: "unique_character_user",
+        },
+      ],
     }
   );
-
   return Favorite;
 };
